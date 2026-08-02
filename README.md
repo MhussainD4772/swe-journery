@@ -18,3 +18,5 @@ The Vite app in `frontend/` and FastAPI app in `backend/` are scaffolds only. Do
 ## Run the scaffolds
 
 See [`runable`](./runable) for the exact commands to start each app.
+
+Backend defaults to port **8001** so it does not clash with other local services on 8000.
