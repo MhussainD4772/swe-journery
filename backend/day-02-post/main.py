@@ -10,4 +10,3 @@ class LogEntry(BaseModel):
 def create_log(entry: LogEntry):
     return{"received", entry.message}
 
-@app.get
