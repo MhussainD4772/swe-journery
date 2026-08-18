@@ -1,9 +1,8 @@
-// import ControlledInput from './day-01-controlled-input/ControlledInput'
-// import List from './day-02-list/List'
-import Fetch from './day-03-fetch/Fetch'
+// import ControlInput from './Challenge-01/ControlInput'
+import NewFetch from './Challenge-01/NewFetch'
 
 function App() {
-  return <Fetch />
+  return <NewFetch />
 }
 
 export default App
