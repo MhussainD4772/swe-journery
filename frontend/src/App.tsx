@@ -1,8 +1,8 @@
 // import ControlInput from './Challenge-01/ControlInput'
-import NewFetch from './Challenge-01/NewFetch'
+import AddLog from './day-04-add/AddLog'
 
 function App() {
-  return <NewFetch />
+  return <AddLog />
 }
 
 export default App
