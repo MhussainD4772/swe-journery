@@ -1,9 +1,9 @@
 from fastapi import FastAPI
-from pydantic import BaseModel
+
 
 app = FastAPI()
 
 
-@app.get("/")
+@app.get("/health")
 def health_check():
-    return {"status": "ok"}
+    return {"status": "Sab set hai mama"}
