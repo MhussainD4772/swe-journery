@@ -1,6 +1,9 @@
-def main():
-    print("Hello from backend!")
+from fastapi import FastAPI
+from pydantic import BaseModel
+
+app = FastAPI()
 
 
-if __name__ == "__main__":
-    main()
+@app.get("/")
+def health_check():
+    return {"status": "ok"}
