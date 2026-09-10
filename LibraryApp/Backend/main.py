@@ -15,8 +15,10 @@ def health_check():
     return {"status": "Online"}
 
 @app.get("/books", response_model=BookListResponse)
-def get_books(session: Session = Depends(get_db)):
+def get_books(search: str | None = None, session: Session = Depends(get_db)):
     statement = select(models.Book)
+    if search:
+        statement = statement.where(models.Book.title.ilike(f"%{search}%"))
     books = session.execute(statement).scalars().all()
     return {"books": books}
 
