@@ -35,4 +35,4 @@ def get_book(id: int, session: Session = Depends(get_db)):
     book = session.get(models.Book, id)
     if book is None:
         raise HTTPException(status_code=404, detail="Book not found")
-    return book    
+    return book   
