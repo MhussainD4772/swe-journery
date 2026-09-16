@@ -65,3 +65,45 @@ def login_user(form_data: OAuth2PasswordRequestForm = Depends(), session: Sessio
 @app.get("/me", response_model=UserRead)
 def read_current_user(current_user: models.User = Depends(get_current_user)):
     return current_user
+
+@app.get("/my-library", response_model=BookListResponse)
+def get_my_library(
+    current_user: models.User = Depends(get_current_user),
+    session: Session = Depends(get_db),
+):
+    statement = (
+        select(models.Book)
+        .join(models.SavedBook)
+        .where(models.SavedBook.user_id == current_user.id)
+    )
+    books = session.execute(statement).scalars().all()
+    return {"books": books}
+
+@app.post("/my-library/{book_id}", status_code=201)
+def save_book(
+    book_id: int,
+    current_user: models.User = Depends(get_current_user),
+    session: Session = Depends(get_db),
+):
+    book = session.get(models.Book, book_id)
+    if book is None:
+        raise HTTPException(status_code=404, detail="Book not found")
+    already_saved = session.get(models.SavedBook, (current_user.id, book_id))
+    if already_saved:
+        return {"message": "Book already saved in your library"}
+    session.add(models.SavedBook(user_id=current_user.id, book_id=book_id))
+    session.commit()
+    return {"message": "Book saved to your library"}
+
+@app.delete("/my-library/{book_id}", status_code=204)
+def remove_book(
+    book_id: int,
+    current_user: models.User = Depends(get_current_user),
+    session: Session = Depends(get_db),
+):
+    saved_book = session.get(models.SavedBook, (current_user.id, book_id))
+    if saved_book is None:
+        raise HTTPException(status_code=404, detail="Book not found in your library")
+    session.delete(saved_book)
+    session.commit()
+    return
