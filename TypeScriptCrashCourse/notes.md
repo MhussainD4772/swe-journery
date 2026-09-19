@@ -1,5 +1,9 @@
 What is TypeScript ?
 
+Why do we need it ?
+
+Difference from JS ? 
+
 Benefits of TypeScript
 
 - Better error feedback
@@ -9,6 +13,23 @@ Benefits of TypeScript
 - Custom types
 
 - Self documenting
+
+- Static Typing
+
+- Refactoring
+
+- Shorthand notations
+
+Statically Typed = c++, c#, Java
+Dynamically Typed = JS, Python, Ruby 
+
+Drawbacks
+
+- Compilation - Transpilation
+- Discpline in writing code
+  
+
+
 
   
 
