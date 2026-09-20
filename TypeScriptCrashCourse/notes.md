@@ -36,6 +36,15 @@ Fundamentals
 - Enums
 - Functions
 - Objects
+- Advance Types:
+    Alies
+    Union Types
+    Intersection Types
+    Literal Types
+    Nullable Types
+    Optional Chanining
+
+
   
 
 
