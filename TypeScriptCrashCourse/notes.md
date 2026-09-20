@@ -27,6 +27,15 @@ Drawbacks
 
 - Compilation - Transpilation
 - Discpline in writing code
+
+Fundamentals
+
+- The any Type
+- Arrays
+- Tuples
+- Enums
+- Functions
+- Objects
   
 
 
