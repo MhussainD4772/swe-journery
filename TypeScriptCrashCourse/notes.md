@@ -45,7 +45,7 @@ Fundamentals
     Optional Chanining
 
 
-node ../../dist/practice/arrays.js
+node ../../dist/practice/
 
 
   
