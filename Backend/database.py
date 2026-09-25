@@ -1,8 +1,11 @@
-from sqlalchemy import create_engine
-from sqlalchemy.orm import Session, sessionmaker, DeclarativeBase
 from collections.abc import Generator
 
-engine = create_engine("postgresql+psycopg://admin:admin@localhost:5432/libraryappdb")
+from sqlalchemy import create_engine
+from sqlalchemy.orm import Session, sessionmaker, DeclarativeBase
+
+from config import settings
+
+engine = create_engine(settings.database_url)
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 
 class Base(DeclarativeBase):

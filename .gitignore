@@ -6,9 +6,9 @@ __pycache__/
 *.pyc
 *.egg-info/
 
-# Env and local secrets
+# Env and local secrets — keep .env.example committed
 .env
-.env.*
+!.env.example
 *.local
 
 # Tooling

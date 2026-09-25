@@ -39,6 +39,7 @@ These are the ideas this repo is built to teach. Each one maps to real files —
 | SQLAlchemy sessions | Open a connection, use it, close it — even when a request fails. | `Backend/database.py` |
 | Password hashing | You store a hash, never the password. | `Backend/auth.py` (`hash_password`, `verify_password`) |
 | JWT (access tokens) | After login, the client proves who it is with a Bearer token. | `Backend/auth.py`, `POST /login` |
+| Config from `.env` | Secrets and the DB URL stay out of source. Missing values fail at startup. | `Backend/config.py`, `Backend/.env.example` |
 | Dependencies | `Depends(get_current_user)` is how FastAPI injects “the logged-in user.” | `GET /me`, `/my-library` |
 | Many-to-many | `saved_books` is just `(user_id, book_id)`. That *is* “my library.” | `SavedBook` in `models.py` |
 | CORS | A page on `:5173` is a different origin from `:8000`. The API must allow it. | `CORSMiddleware` in `main.py` |
@@ -94,6 +95,8 @@ LibraryApp/
 │   ├── main.py                 # routes (start here after models)
 │   ├── models.py               # database tables
 │   ├── schemas.py              # JSON in/out
+│   ├── config.py               # reads Backend/.env
+│   ├── .env.example            # copy to .env (never commit .env)
 │   ├── database.py             # engine + get_db()
 │   ├── auth.py                 # hash, JWT, get_current_user
 │   ├── seed.py                 # load books.json once
@@ -132,6 +135,9 @@ This creates database `libraryappdb` with user `admin` / `admin` on port `5432` 
 
 ```bash
 cd Backend
+cp .env.example .env
+# Edit .env and set SECRET_KEY to a long random string:
+#   python -c "import secrets; print(secrets.token_hex(32))"
 uv sync
 uv run python seed.py
 uv run uvicorn main:app --reload --port 8000
@@ -228,10 +234,11 @@ Do these in order. After each step, answer the question out loud or in a note. I
 
 1. `models.py` — Draw the three tables on paper. Why does `SavedBook` have **two** primary key columns?
 2. `schemas.py` — Why is there a `UserCreate` and a `UserRead`? What would go wrong if you returned `User` the model from `/me`?
-3. `database.py` — What does `yield` do inside `get_db`? When does `db.close()` run?
-4. `auth.py` — Trace `get_current_user` with a valid token, then an expired one. Which exception becomes HTTP 401?
-5. `main.py` — For `POST /my-library/{book_id}`, list every check before `session.commit()`.
-6. Bonus: add `?search=` in `/docs` and watch the SQL idea: `title ILIKE '%dune%'`.
+3. `config.py` — What happens if you start the API with no `.env` and no `SECRET_KEY` in the environment?
+4. `database.py` — What does `yield` do inside `get_db`? When does `db.close()` run?
+5. `auth.py` — Trace `get_current_user` with a valid token, then an expired one. Which exception becomes HTTP 401?
+6. `main.py` — For `POST /my-library/{book_id}`, list every check before `session.commit()`.
+7. Bonus: add `?search=` in `/docs` and watch the SQL idea: `title ILIKE '%dune%'`.
 
 ### Day 3 — Frontend, request by request
 
@@ -276,13 +283,12 @@ book_id  → books.id
 
 This project chooses simplicity over production hardening. Know what you are trading away:
 
-- **JWT secret and DB URL are hardcoded** in `auth.py` and `database.py`. Real apps use environment variables and never commit secrets.
 - **Token lives in `localStorage`.** Convenient, but any XSS on the page can steal it. Production apps often use `httpOnly` cookies.
 - **`GET /books` is public.** Fine for a demo catalog. A private library API would require a token on every book route.
 - **No pagination.** The catalog is small. Real lists need `limit` / `offset` (or cursors).
 - **No tests.** The next skill to add is a pytest for `save_book` (idempotent + 404) and a frontend test for “no token → `/login`.”
 
-If you are building a portfolio version, fix the first two before you show it to anyone.
+If you are building a portfolio version, fix the cookie/token storage before you treat this as a real auth system.
 
 ---
 
@@ -292,10 +298,9 @@ Pick **one**. Finish it. That teaches more than skimming ten.
 
 1. Add a Register page that `POST`s JSON to `/register`, then sends the user to login.
 2. Protect `GET /books` with `Depends(get_current_user)` and confirm the UI still works.
-3. Move `SECRET_KEY` and the database URL into a `.env` file (never commit `.env`).
-4. Show `description` on each card, or on a `/books/:id` page.
-5. Paginate `/books` (`skip` + `limit` query params).
-6. Write one backend test: saving a missing `book_id` returns 404.
+3. Show `description` on each card, or on a `/books/:id` page.
+4. Paginate `/books` (`skip` + `limit` query params).
+5. Write one backend test: saving a missing `book_id` returns 404.
 
 ---
 
@@ -304,6 +309,7 @@ Pick **one**. Finish it. That teaches more than skimming ten.
 | Symptom | Likely cause |
 | --- | --- |
 | UI loads, login fails with a network / CORS error | API is down, or the UI is not on `http://localhost:5173` |
+| API crashes on start mentioning `secret_key` | You have no `Backend/.env` — `cp .env.example .env` and set `SECRET_KEY` |
 | `connection refused` from FastAPI | Postgres is not running — `docker compose up -d` |
 | Empty book list | `seed.py` was never run, or it ran before Postgres was up |
 | Logged in, then suddenly back at login | Token expired (30 minutes) or a 401 cleared `localStorage` |

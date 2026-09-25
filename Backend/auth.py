@@ -6,11 +6,8 @@ from datetime import datetime, timedelta, timezone
 import jwt
 import bcrypt
 
+from config import settings
 import models
-
-SECRET_KEY="d12f7cd5d6dd9f902319b412ea36453d9f0f221393a56517727e3620b8c49117" 
-ALGORITHM="HS256"
-ACCESS_TOKEN_EXPIRE_MINUTES=30
 
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl="login")
 
@@ -27,14 +24,20 @@ def create_access_token(data : dict, expires_delta: int | None = None) -> str:
     if expires_delta is not None:
         expire = datetime.now(timezone.utc) + timedelta(minutes=expires_delta)
     else:
-        expire = datetime.now(timezone.utc) + timedelta(minutes=ACCESS_TOKEN_EXPIRE_MINUTES)
+        expire = datetime.now(timezone.utc) + timedelta(
+            minutes=settings.access_token_expire_minutes
+        )
     to_encode.update({"exp": expire})
-    encoded_jwt = jwt.encode(to_encode, SECRET_KEY, algorithm=ALGORITHM)
+    encoded_jwt = jwt.encode(
+        to_encode, settings.secret_key, algorithm=settings.algorithm
+    )
     return encoded_jwt
 
 
 def decode_access_token(token: str) -> dict:
-    return jwt.decode(token, SECRET_KEY, algorithms=[ALGORITHM])
+    return jwt.decode(
+        token, settings.secret_key, algorithms=[settings.algorithm]
+    )
 
 def get_current_user(token: str = Depends(oauth2_scheme), session: Session = Depends(get_db)):
     try:
