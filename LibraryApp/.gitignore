@@ -1,0 +1,18 @@
+# Dependencies and build output
+node_modules/
+dist/
+.venv/
+__pycache__/
+*.pyc
+*.egg-info/
+
+# Env and local secrets — keep .env.example committed
+.env
+!.env.example
+*.local
+
+# Tooling
+.DS_Store
+.idea/
+.vscode/
+*.log
