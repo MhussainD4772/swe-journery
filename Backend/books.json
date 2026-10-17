@@ -1,0 +1,480 @@
+[
+  {
+    "title": "Dune",
+    "author": "Frank Herbert",
+    "description": "A desert planet, a spice monopoly, and a boy who becomes a messiah."
+  },
+  {
+    "title": "Neuromancer",
+    "author": "William Gibson",
+    "description": "A burned-out hacker takes one last job in cyberspace."
+  },
+  {
+    "title": "The Left Hand of Darkness",
+    "author": "Ursula K. Le Guin",
+    "description": "An envoy navigates a world without fixed gender."
+  },
+  {
+    "title": "Foundation",
+    "author": "Isaac Asimov"
+  },
+  {
+    "title": "Beowulf",
+    "description": "An Old English epic poem about a hero and three monsters."
+  },
+  {
+    "title": "The Dispossessed",
+    "author": "Ursula K. Le Guin",
+    "description": "A physicist travels between an anarchist moon and its capitalist twin."
+  },
+  {
+    "title": "Snow Crash",
+    "author": "Neal Stephenson",
+    "description": "Pizza delivery, sword fights, and a linguistic virus."
+  },
+  {
+    "title": "The Three-Body Problem",
+    "author": "Cixin Liu",
+    "description": "A secret military project makes contact with an alien civilisation."
+  },
+  {
+    "title": "Kindred",
+    "author": "Octavia E. Butler",
+    "description": "A modern woman is pulled back in time to an antebellum plantation."
+  },
+  {
+    "title": "Parable of the Sower",
+    "author": "Octavia E. Butler"
+  },
+  {
+    "title": "Frankenstein",
+    "author": "Mary Shelley",
+    "description": "A student assembles a living creature and abandons it."
+  },
+  {
+    "title": "Dracula",
+    "author": "Bram Stoker",
+    "description": "An epistolary novel of a vampire's move to England."
+  },
+  {
+    "title": "Jane Eyre",
+    "author": "Charlotte Bronte",
+    "description": "A governess falls for her employer, who is hiding something."
+  },
+  {
+    "title": "Wuthering Heights",
+    "author": "Emily Bronte"
+  },
+  {
+    "title": "Middlemarch",
+    "author": "George Eliot",
+    "description": "Provincial English life, ambition, and disappointing marriages."
+  },
+  {
+    "title": "Bleak House",
+    "author": "Charles Dickens",
+    "description": "A never-ending court case consumes everyone it touches."
+  },
+  {
+    "title": "Great Expectations",
+    "author": "Charles Dickens",
+    "description": "An orphan comes into money from an unknown benefactor."
+  },
+  {
+    "title": "Moby-Dick",
+    "author": "Herman Melville",
+    "description": "A whaling voyage becomes a captain's obsession."
+  },
+  {
+    "title": "The Odyssey",
+    "description": "A ten-year journey home from the Trojan War."
+  },
+  {
+    "title": "The Iliad"
+  },
+  {
+    "title": "Don Quixote",
+    "author": "Miguel de Cervantes",
+    "description": "An elderly man reads too many chivalric romances."
+  },
+  {
+    "title": "Crime and Punishment",
+    "author": "Fyodor Dostoevsky",
+    "description": "A student murders a pawnbroker and unravels."
+  },
+  {
+    "title": "The Brothers Karamazov",
+    "author": "Fyodor Dostoevsky"
+  },
+  {
+    "title": "Anna Karenina",
+    "author": "Leo Tolstoy",
+    "description": "Adultery, trains, and Russian society."
+  },
+  {
+    "title": "War and Peace",
+    "author": "Leo Tolstoy",
+    "description": "Five families live through the Napoleonic invasion of Russia."
+  },
+  {
+    "title": "Madame Bovary",
+    "author": "Gustave Flaubert",
+    "description": "A doctor's wife pursues romance and debt."
+  },
+  {
+    "title": "The Trial",
+    "author": "Franz Kafka",
+    "description": "A man is prosecuted by an authority that never states the charge."
+  },
+  {
+    "title": "The Metamorphosis",
+    "author": "Franz Kafka"
+  },
+  {
+    "title": "One Hundred Years of Solitude",
+    "author": "Gabriel Garcia Marquez",
+    "description": "Seven generations of the Buendia family in Macondo."
+  },
+  {
+    "title": "Love in the Time of Cholera",
+    "author": "Gabriel Garcia Marquez",
+    "description": "A man waits fifty-one years for a woman."
+  },
+  {
+    "title": "Things Fall Apart",
+    "author": "Chinua Achebe",
+    "description": "A wrestler's standing collapses as colonialism arrives."
+  },
+  {
+    "title": "Half of a Yellow Sun",
+    "author": "Chimamanda Ngozi Adichie",
+    "description": "Three lives during the Biafran war."
+  },
+  {
+    "title": "Beloved",
+    "author": "Toni Morrison",
+    "description": "A formerly enslaved woman is haunted by her daughter."
+  },
+  {
+    "title": "Song of Solomon",
+    "author": "Toni Morrison"
+  },
+  {
+    "title": "Invisible Man",
+    "author": "Ralph Ellison",
+    "description": "A young Black man moves through a country that refuses to see him."
+  },
+  {
+    "title": "Their Eyes Were Watching God",
+    "author": "Zora Neale Hurston",
+    "description": "Janie tells the story of three marriages."
+  },
+  {
+    "title": "The Sound and the Fury",
+    "author": "William Faulkner",
+    "description": "One Southern family's decline, told four ways."
+  },
+  {
+    "title": "To Kill a Mockingbird",
+    "author": "Harper Lee",
+    "description": "A lawyer defends a Black man in 1930s Alabama."
+  },
+  {
+    "title": "The Grapes of Wrath",
+    "author": "John Steinbeck",
+    "description": "A family drives west from the Dust Bowl."
+  },
+  {
+    "title": "Of Mice and Men",
+    "author": "John Steinbeck"
+  },
+  {
+    "title": "The Great Gatsby",
+    "author": "F. Scott Fitzgerald",
+    "description": "A bootlegger throws parties for a woman across the bay."
+  },
+  {
+    "title": "The Sun Also Rises",
+    "author": "Ernest Hemingway",
+    "description": "Expatriates drift from Paris to Pamplona."
+  },
+  {
+    "title": "The Old Man and the Sea",
+    "author": "Ernest Hemingway",
+    "description": "An old fisherman hooks a marlin too big for his boat."
+  },
+  {
+    "title": "Mrs Dalloway",
+    "author": "Virginia Woolf",
+    "description": "One day in London, one party, many minds."
+  },
+  {
+    "title": "To the Lighthouse",
+    "author": "Virginia Woolf"
+  },
+  {
+    "title": "Ulysses",
+    "author": "James Joyce",
+    "description": "One Dublin day, rendered exhaustively."
+  },
+  {
+    "title": "Brave New World",
+    "author": "Aldous Huxley",
+    "description": "A society engineered for stability and pleasure."
+  },
+  {
+    "title": "1984",
+    "author": "George Orwell",
+    "description": "A clerk falsifies the past for a state that watches everything."
+  },
+  {
+    "title": "Animal Farm",
+    "author": "George Orwell",
+    "description": "Farm animals stage a revolution."
+  },
+  {
+    "title": "Fahrenheit 451",
+    "author": "Ray Bradbury",
+    "description": "A fireman starts fires, then starts reading."
+  },
+  {
+    "title": "The Martian Chronicles",
+    "author": "Ray Bradbury"
+  },
+  {
+    "title": "Slaughterhouse-Five",
+    "author": "Kurt Vonnegut",
+    "description": "A man becomes unstuck in time after Dresden."
+  },
+  {
+    "title": "Cat's Cradle",
+    "author": "Kurt Vonnegut",
+    "description": "A substance that freezes all water it touches."
+  },
+  {
+    "title": "Catch-22",
+    "author": "Joseph Heller",
+    "description": "A bomber pilot tries to be declared insane."
+  },
+  {
+    "title": "The Catcher in the Rye",
+    "author": "J.D. Salinger",
+    "description": "Three days in New York with a boy who has been expelled."
+  },
+  {
+    "title": "On the Road",
+    "author": "Jack Kerouac"
+  },
+  {
+    "title": "Lolita",
+    "author": "Vladimir Nabokov",
+    "description": "An unreliable narrator confesses at length."
+  },
+  {
+    "title": "Pale Fire",
+    "author": "Vladimir Nabokov",
+    "description": "A poem and a commentary that hijacks it."
+  },
+  {
+    "title": "Blood Meridian",
+    "author": "Cormac McCarthy",
+    "description": "A scalp-hunting gang crosses the borderlands."
+  },
+  {
+    "title": "The Road",
+    "author": "Cormac McCarthy",
+    "description": "A father and son walk south through ash."
+  },
+  {
+    "title": "Never Let Me Go",
+    "author": "Kazuo Ishiguro",
+    "description": "Students at an English boarding school learn what they are for."
+  },
+  {
+    "title": "The Remains of the Day",
+    "author": "Kazuo Ishiguro"
+  },
+  {
+    "title": "Norwegian Wood",
+    "author": "Haruki Murakami",
+    "description": "A student, two women, and a great deal of grief."
+  },
+  {
+    "title": "The Wind-Up Bird Chronicle",
+    "author": "Haruki Murakami",
+    "description": "A missing cat leads to a missing wife and a dry well."
+  },
+  {
+    "title": "Kafka on the Shore",
+    "author": "Haruki Murakami"
+  },
+  {
+    "title": "The Handmaid's Tale",
+    "author": "Margaret Atwood",
+    "description": "A theocracy assigns women to reproductive service."
+  },
+  {
+    "title": "Oryx and Crake",
+    "author": "Margaret Atwood",
+    "description": "The last man alive remembers how it happened."
+  },
+  {
+    "title": "Cloud Atlas",
+    "author": "David Mitchell",
+    "description": "Six nested stories across five centuries."
+  },
+  {
+    "title": "Infinite Jest",
+    "author": "David Foster Wallace",
+    "description": "A tennis academy, a halfway house, and a lethal film."
+  },
+  {
+    "title": "White Teeth",
+    "author": "Zadie Smith",
+    "description": "Two North London families across three generations."
+  },
+  {
+    "title": "A Fine Balance",
+    "author": "Rohinton Mistry",
+    "description": "Four strangers share a flat during the Emergency."
+  },
+  {
+    "title": "Midnight's Children",
+    "author": "Salman Rushdie",
+    "description": "A boy born at the stroke of independence."
+  },
+  {
+    "title": "The God of Small Things",
+    "author": "Arundhati Roy",
+    "description": "Twins in Kerala and the day everything changed."
+  },
+  {
+    "title": "A Suitable Boy",
+    "author": "Vikram Seth"
+  },
+  {
+    "title": "The White Tiger",
+    "author": "Aravind Adiga",
+    "description": "A driver writes to the Chinese premier about how he got rich."
+  },
+  {
+    "title": "Train to Pakistan",
+    "author": "Khushwant Singh",
+    "description": "A border village during Partition."
+  },
+  {
+    "title": "Interpreter of Maladies",
+    "author": "Jhumpa Lahiri",
+    "description": "Stories of Indian and Indian-American lives."
+  },
+  {
+    "title": "The Namesake",
+    "author": "Jhumpa Lahiri"
+  },
+  {
+    "title": "Persepolis",
+    "author": "Marjane Satrapi",
+    "description": "A graphic memoir of growing up during the Iranian revolution."
+  },
+  {
+    "title": "Maus",
+    "author": "Art Spiegelman",
+    "description": "A son interviews his father about Auschwitz."
+  },
+  {
+    "title": "Watchmen",
+    "author": "Alan Moore",
+    "description": "Retired vigilantes investigate one of their own."
+  },
+  {
+    "title": "Sapiens",
+    "author": "Yuval Noah Harari",
+    "description": "A brief history of humankind."
+  },
+  {
+    "title": "Guns, Germs, and Steel",
+    "author": "Jared Diamond"
+  },
+  {
+    "title": "The Selfish Gene",
+    "author": "Richard Dawkins",
+    "description": "Evolution seen from the gene's point of view."
+  },
+  {
+    "title": "A Brief History of Time",
+    "author": "Stephen Hawking",
+    "description": "Cosmology for people who don't do equations."
+  },
+  {
+    "title": "The Structure of Scientific Revolutions",
+    "author": "Thomas S. Kuhn",
+    "description": "How paradigms shift."
+  },
+  {
+    "title": "Thinking, Fast and Slow",
+    "author": "Daniel Kahneman",
+    "description": "Two systems of thought and their failures."
+  },
+  {
+    "title": "The Emperor of All Maladies",
+    "author": "Siddhartha Mukherjee",
+    "description": "A biography of cancer."
+  },
+  {
+    "title": "Bad Blood",
+    "author": "John Carreyrou"
+  },
+  {
+    "title": "The Soul of a New Machine",
+    "author": "Tracy Kidder",
+    "description": "A team races to build a minicomputer."
+  },
+  {
+    "title": "The Mythical Man-Month",
+    "author": "Frederick P. Brooks Jr.",
+    "description": "Why adding people to a late project makes it later."
+  },
+  {
+    "title": "Structure and Interpretation of Computer Programs",
+    "author": "Harold Abelson",
+    "description": "Programs as a medium for expressing ideas."
+  },
+  {
+    "title": "The Pragmatic Programmer",
+    "author": "Andrew Hunt",
+    "description": "Practical advice on the craft of software."
+  },
+  {
+    "title": "Design Patterns",
+    "author": "Erich Gamma"
+  },
+  {
+    "title": "Refactoring",
+    "author": "Martin Fowler",
+    "description": "Improving the design of existing code."
+  },
+  {
+    "title": "Clean Code",
+    "author": "Robert C. Martin",
+    "description": "A handbook of agile software craftsmanship."
+  },
+  {
+    "title": "Designing Data-Intensive Applications",
+    "author": "Martin Kleppmann",
+    "description": "Reliability, scalability and maintainability in data systems."
+  },
+  {
+    "title": "The Art of Computer Programming",
+    "author": "Donald E. Knuth"
+  },
+  {
+    "title": "Godel, Escher, Bach",
+    "author": "Douglas Hofstadter",
+    "description": "Formal systems, self-reference, and minds."
+  },
+  {
+    "title": "The Annotated Turing",
+    "author": "Charles Petzold",
+    "description": "A guided tour through Turing's 1936 paper."
+  }
+]
