@@ -1,0 +1,14 @@
+# Secrets — never in an image
+.env
+
+# Local Mac environment and caches
+.venv/
+__pycache__/
+*.pyc
+
+# Not needed to run the app
+.gitignore
+README.md
+.env.example
+Dockerfile
+.dockerignore

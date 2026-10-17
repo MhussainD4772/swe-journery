@@ -1,0 +1,34 @@
+# Project name. Compose prefixes everything it creates with this.
+name: library
+
+services:
+  # ---------- Database ----------
+  db:
+    image: postgres:16                  # same as: docker run ... postgres:16
+    environment:                        # same as: -e POSTGRES_...
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: admin
+      POSTGRES_DB: libraryappdb
+    volumes:                            # same as: -v db-data:/var/lib/...
+      - db-data:/var/lib/postgresql/data
+    healthcheck:                        # NEW: how Docker checks Postgres is ready
+      test: ["CMD-SHELL", "pg_isready -U admin -d libraryappdb"]
+      interval: 5s
+      timeout: 3s
+      retries: 5
+
+  # ---------- Backend ----------
+  backend:
+    build: ./Backend                    # build the image from Backend/Dockerfile
+    ports:                              # same as: -p 8000:8000
+      - "8000:8000"
+    environment:
+      SECRET_KEY: dev-only-not-a-real-secret
+      DATABASE_URL: postgresql+psycopg://admin:admin@db:5432/libraryappdb
+    depends_on:                         # NEW: don't start until db is healthy
+      db:
+        condition: service_healthy
+
+# Named volumes this project uses
+volumes:
+  db-data:
