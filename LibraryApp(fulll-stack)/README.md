@@ -89,8 +89,8 @@ flowchart LR
 ## Project layout
 
 ```text
-LibraryApp/
-├── docker-compose.yml          # Postgres 16
+LibraryApp(fulll-stack)/
+├── compose.yaml                # Postgres 16 and the API image
 ├── Backend/
 │   ├── main.py                 # routes (start here after models)
 │   ├── models.py               # database tables
@@ -123,7 +123,7 @@ You need **Docker**, **Node.js**, and **Python 3.14+** with [uv](https://docs.as
 
 ### 1. Start Postgres
 
-From `LibraryApp/`:
+From `LibraryApp(fulll-stack)/`:
 
 ```bash
 docker compose up -d
