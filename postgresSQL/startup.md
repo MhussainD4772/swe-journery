@@ -23,7 +23,9 @@ This guide explains how to run the local shop database with Docker and connect t
 
 ## Connection string
 
-postgresql://postgres:pw@localhost:5432/shop
+Use this format with your local credentials:
+
+`postgresql://<username>:<password>@localhost:5432/<database>`
 
 ## Normal start (every time you reopen your laptop)
 
