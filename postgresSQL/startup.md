@@ -32,11 +32,13 @@ Use this format with your local credentials:
 1. Open Docker Desktop. Wait until it says it's running.
 2. Run:
 
+   ```sh
    docker start pg16
    sleep 5
    docker exec pg16 pg_isready -U postgres
+   ```
 
-   Expect: "accepting connections". If "no response", wait 5 seconds and rerun the last line.
+   Expect `accepting connections`. If you see `no response`, wait 5 seconds and rerun the last line.
 
 3. pgAdmin: right-click server -> Connect Server -> password pw.
 
