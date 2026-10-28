@@ -40,7 +40,7 @@ Use this format with your local credentials:
 
    Expect `accepting connections`. If you see `no response`, wait 5 seconds and rerun the last line.
 
-3. pgAdmin: right-click server -> Connect Server -> password pw.
+3. In pgAdmin, right-click the `shop` server, choose **Connect Server**, and enter the configured password.
 
 ## If pgAdmin says: role "postgres" does not exist
 
