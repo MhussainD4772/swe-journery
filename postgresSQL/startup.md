@@ -2,6 +2,11 @@
 
 This guide explains how to run the local shop database with Docker and connect to it from pgAdmin or `psql`.
 
+## Prerequisites
+
+- Docker Desktop must be installed and running.
+- The `pg16` container must already exist.
+
 ## Connection parameters
 
 Host name/address: localhost
