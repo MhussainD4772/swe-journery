@@ -1,4 +1,6 @@
-# Start the shop database (Docker Postgres)
+# Start the Shop Database
+
+This guide explains how to run the local shop database with Docker and connect to it from pgAdmin or `psql`.
 
 ## Connection parameters
 
