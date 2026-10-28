@@ -54,9 +54,11 @@ Another PostgreSQL service, such as Homebrew `postgresql@18`, may already be usi
    lsof -nP -iTCP:5432 -sTCP:LISTEN
    ```
 
-2. If it's postgres from Homebrew, stop it:
+2. If the process is Homebrew PostgreSQL, stop that service:
 
+   ```sh
    brew services stop postgresql@18
+   ```
 
 3. Confirm the port is free (should print nothing):
 
