@@ -46,7 +46,7 @@ Use this format with your local credentials:
 
 ### If pgAdmin says: role "postgres" does not exist
 
-Another Postgres (Homebrew postgresql@18) is stealing port 5432.
+Another PostgreSQL service, such as Homebrew `postgresql@18`, may already be using port `5432`.
 
 1. See who owns the port:
 
