@@ -9,15 +9,17 @@ This guide explains how to run the local shop database with Docker and connect t
 
 ## Connection parameters
 
-Host name/address: localhost
-Port: 5432
-Database (Maintenance database in pgAdmin): shop
-Username: postgres
-Password: pw
-Container name: pg16
-Docker image: postgres:16
-Data volume: pgdata
-Server name in pgAdmin (General tab, any label): shop
+| Setting | Value |
+| --- | --- |
+| Host name/address | `localhost` |
+| Port | `5432` |
+| Database | `shop` |
+| Username | `postgres` |
+| Password | `pw` |
+| Container name | `pg16` |
+| Docker image | `postgres:16` |
+| Data volume | `pgdata` |
+| pgAdmin server name | `shop` |
 
 ## Connection string
 
