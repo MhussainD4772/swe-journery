@@ -48,9 +48,11 @@ Use this format with your local credentials:
 
 Another PostgreSQL service, such as Homebrew `postgresql@18`, may already be using port `5432`.
 
-1. See who owns the port:
+1. Check which process owns the port:
 
+   ```sh
    lsof -nP -iTCP:5432 -sTCP:LISTEN
+   ```
 
 2. If it's postgres from Homebrew, stop it:
 
