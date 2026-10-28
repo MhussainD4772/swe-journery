@@ -42,7 +42,9 @@ Use this format with your local credentials:
 
 3. In pgAdmin, right-click the `shop` server, choose **Connect Server**, and enter the configured password.
 
-## If pgAdmin says: role "postgres" does not exist
+## Troubleshooting
+
+### If pgAdmin says: role "postgres" does not exist
 
 Another Postgres (Homebrew postgresql@18) is stealing port 5432.
 
