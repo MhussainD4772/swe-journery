@@ -1,22 +1,24 @@
+from datetime import datetime, timedelta, timezone
+from pathlib import Path
 from zoneinfo import ZoneInfo
 
-from fastapi import Depends, FastAPI
-from sqlalchemy import select
+from fastapi import Depends, FastAPI, HTTPException
+from fastapi.responses import FileResponse
+from sqlalchemy import delete, func, select, tuple_, update
 from sqlalchemy.orm import Session, joinedload
 
 from db import get_session
-from models import Event
-from datetime import datetime, timedelta, timezone
-
-from fastapi import HTTPException
+from models import Event, EventSeat, Hold, HoldSeat, Seat, TicketTier
 from pydantic import BaseModel
 from sqlalchemy.exc import IntegrityError
-from sqlalchemy import delete, func, tuple_, update
-
-
-from models import EventSeat, Hold, HoldSeat
 
 app = FastAPI()
+
+
+@app.get("/", include_in_schema=False)
+def home():
+    return FileResponse(Path(__file__).parent / "static" / "index.html")
+
 
 @app.get("/health")
 def health_check():
@@ -38,6 +40,30 @@ def list_events(session: Session = Depends(get_session)):
         }
         for e in events
     ]
+
+
+@app.get("/events/{event_id}/seats")
+def list_event_seats(event_id: int, session: Session = Depends(get_session)):
+    seats = session.execute(
+        select(EventSeat, Seat, TicketTier)
+        .join(Seat, EventSeat.seat_id == Seat.id)
+        .join(TicketTier, EventSeat.tier_id == TicketTier.id)
+        .where(EventSeat.event_id == event_id)
+        .order_by(Seat.section, Seat.row_label, Seat.seat_number)
+    ).all()
+    return [
+        {
+            "id": event_seat.seat_id,
+            "section": seat.section,
+            "row": seat.row_label,
+            "number": seat.seat_number,
+            "status": event_seat.status,
+            "tier": tier.name,
+            "price": str(tier.price),
+        }
+        for event_seat, seat, tier in seats
+    ]
+
 
 class HoldRequest(BaseModel):
     user_id: int
